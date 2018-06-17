@@ -1,0 +1,14 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /progress/
+RewriteRule ^/ index.php
+RewriteRule ^dashboard/invitado index.php?accion=dashboard
+RewriteRule ^anime/resumen index.php?sec=anime&accion=resumen
+RewriteRule ^comics/resumen index.php?sec=cómics&accion=resumen
+RewriteRule ^juegos/resumen index.php?sec=juegos&accion=resumen
+RewriteRule ^series/resumen index.php?sec=series&accion=resumen
+RewriteRule ^anime/(.+) index.php?sec=anime&accion=ficha&id=$1
+RewriteRule ^comics/(.+) index.php?sec=cómics&accion=ficha&id=$1
+RewriteRule ^juegos/(.+) index.php?sec=juegos&accion=ficha&id=$1
+RewriteRule ^series/([0-9]+)/temporadas/([0-9]+) index.php?sec=temporadas&accion=ficha&id=$1&t=$2&s=$1
+RewriteRule ^series/(.+)? index.php?sec=series&accion=ficha&id=$1
