@@ -247,49 +247,13 @@
 	  return $plata[0];
 	}	
 
-	function obtNameElement($id) {
+	function obtNameElement($c, $t, $co, $id) {
 	  // Conectar con la base de datos y seleccionarla
 	  $conexion = conectarBD();
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
-
-	  $se = $_REQUEST['sec'];
-
-	  switch ($se) {
-
-	  	case 'anime':	
-		$tabla = "animes";
-		$code = "idAnime";
-		$campo = "titulo";
-		break;
-
-	  	case 'cómics':	
-		$tabla = "comics";
-		$code = "idComic";
-		$campo = "titulo";
-		break;	
-
-	  	case 'juegos':	
-		$tabla = "juegos";
-		$code = "idJuego";
-		$campo = "titulo";
-		break;		
-
-	  	case 'series':	
-		$tabla = "series";
-		$code = "id";
-		$campo = "titulo";
-		break;	
-
-	  	case 'temporadas':	
-		$tabla = "series";
-		$code = "id";
-		$campo = "titulo";
-		break;							
-
-	  }
 	 
 	  // Ejecutar la consulta SQL
-	  $resultado = mysqli_query($conexion,"SELECT $campo FROM $tabla WHERE $code = $id ");
+	  $resultado = mysqli_query($conexion,"SELECT $c FROM $t WHERE $co = $id ");
 	 
 	  $plata = mysqli_fetch_array($resultado);
 	 

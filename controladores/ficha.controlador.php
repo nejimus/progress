@@ -320,7 +320,7 @@
 
 			$sinopsis_tag = "ficha-sinopsis";
 			$descripcion = $ficha['sinopsis'];			// Sinopsis de la temporada
-			$ruta = "series/".$ficha['id'];
+			$ruta = "series/".$ficha['idSerie'];
 
 			// BOTÓN SEGUIR/EDITAR
 
@@ -371,7 +371,7 @@
 
 			// CABECERA
 
-			$titulo = obtNameElement($ficha['serie']);
+			$titulo = obtNameElement('titulo', 'series', 'idSerie', $ficha['serie']);
 			$subtitulo = "Temporada ".$ficha['temporada'];
 			$linea = "";
 
@@ -391,7 +391,7 @@
 			
 			$ficha_t1_value = "En construcción";
 			$ficha_t2_value = $ficha['capitulos'];						// Valor para el 2o TAG de la ficha técnica
-			$ficha_t3_value = "<a href='series/".$ficha['serie']."'>".obtNameElement($ficha['serie'])."</a>";			// Valor para el 3er TAG de la ficha técnica
+			$ficha_t3_value = "<a href='series/".$ficha['serie']."'>".obtNameElement('titulo', 'series', 'idSerie', $ficha['serie'])."</a>";			// Valor para el 3er TAG de la ficha técnica
 			$ficha_t4_value = $ficha['lanzamiento'];					// Valor para el 4o TAG de la ficha técnica			
 
 			// MI RESUMEN
@@ -483,10 +483,9 @@
 	} else {
 		$notam = " ------- ";
 	}
-
-	require 'vistas/cabecera.php';
 	
 	//Pasa a la vista toda la información que se desea representar
+	require 'cabecera.controlador.php';
 	require 'vistas/ficha.php';
 
 ?>

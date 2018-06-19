@@ -1,4 +1,6 @@
 <?php 
+
+	session_start();
 	
 	if(!empty($_REQUEST['accion'])) {
 		$accion = $_REQUEST['accion'];
@@ -49,7 +51,7 @@
 			include $carpetaControladores.'universos.controlador.php';
 			break;		
 			
-			case 'salir':
+			case 'logout':
 			include $carpetaControladores.'logout.controlador.php';
 			break;
 			

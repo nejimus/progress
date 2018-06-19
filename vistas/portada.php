@@ -13,8 +13,8 @@
 							En Progress puedes organizar tus <strong class="a">anime</strong>, <strong class="c">cómics</strong>, <strong class="j">juegos</strong> y <strong class="s">series</strong> de manera cómoda, fácil e intuitiva para estar siempre al día de tu progreso.
 						</h2>
 
-						<a href=""><div class="login"><h3>Login/Registro</h3></div></a>
-						<a href="dashboard/invitado"><div class="guest"><h3>Entrar como invitado</h3></div></a>
+						<a href="index.php?accion=login"><div class="login"><h3>Login/Registro</h3></div></a>
+						<a href="index.php?accion=login&guest=true"><div class="guest"><h3>Entrar como invitado</h3></div></a>
 
 						<div class="lead">
 							<img src="img/icons/calendar.svg" >

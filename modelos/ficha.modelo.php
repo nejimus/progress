@@ -17,8 +17,10 @@
 	function getEstadoElemento($t,$c,$i)
 	{		
 	  $conexion = conectarBD();
+
+	  $uid = $_SESSION['id'];
 	 
-	  $status = mysqli_query($conexion,"SELECT * FROM $t WHERE $c = $i ");
+	  $status = mysqli_query($conexion,"SELECT * FROM $t WHERE $c = $i AND cod_usu = $uid ");
 	 
 	  $resul = mysqli_fetch_array($status);
 
@@ -46,7 +48,7 @@
 	  $conexion = conectarBD();
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
-	  $resultado = mysqli_query($conexion,"SELECT sinopsis FROM series WHERE id = '$un' ");
+	  $resultado = mysqli_query($conexion,"SELECT sinopsis FROM series WHERE idSerie = '$un' ");
 	 
 	  $sino = mysqli_fetch_array($resultado);
 	 
@@ -60,7 +62,7 @@
 	  $conexion = conectarBD();
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
-	  $resultado = mysqli_query($conexion,"SELECT COUNT(*) FROM $t WHERE $c = $i ");
+	  $resultado = mysqli_query($conexion,"SELECT COUNT(*) FROM $t WHERE puntuacion > 0 AND $c = $i ");
 	 
 	  $many = mysqli_fetch_array($resultado);
 	 
@@ -74,7 +76,7 @@
 	  $conexion = conectarBD();
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
-	  $resultado = mysqli_query($conexion,"SELECT SUM(puntuacion) FROM $t WHERE $c = $i ");
+	  $resultado = mysqli_query($conexion,"SELECT SUM(puntuacion) FROM $t WHERE puntuacion > 0 AND $c = $i ");
 	 
 	  $suma = mysqli_fetch_array($resultado);
 	 

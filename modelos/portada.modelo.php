@@ -1,5 +1,9 @@
 <?php
 
+	if(isset($_SESSION["id"])){
+		header("Location: dashboard/".$_SESSION['id']."");
+	}
+
 	function getTotalAnimes()
 	{		
 	  // Conectar con la base de datos y seleccionarla

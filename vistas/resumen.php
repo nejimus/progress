@@ -17,7 +17,7 @@
 								<?php if ($sec == 'series') { ?>
 																	
 									<a href="series/<?php echo $ultimo['serie']; ?>/temporadas/<?php echo $ultimo['temporada']; ?>">
-										<img src="img/<?php echo $sec; ?>/<?php echo $ultimo['id'] ?>/T<?php echo $ultimo['temporada']; ?>/cover.jpg" title="<?php echo $ultimo['nombre']; ?>" class="resumen-cover" />
+										<img src="img/<?php echo $sec; ?>/<?php echo $ultimo['idSerie'] ?>/T<?php echo $ultimo['temporada']; ?>/cover.jpg" title="<?php echo $ultimo['nombre']; ?>" class="resumen-cover" />
 									</a>
 
 								<?php } else { ?>
@@ -45,7 +45,7 @@
 								<?php if ($sec == 'series') { ?>
 																	
 									<a href="series/<?php echo $viendo['serie']; ?>/temporadas/<?php echo $viendo['temporada']; ?>">
-										<img src="img/<?php echo $sec; ?>/<?php echo $viendo['id'] ?>/T<?php echo $viendo['temporada']; ?>/cover.jpg" title="<?php echo $viendo['nombre']; ?>" class="resumen-cover" />
+										<img src="img/<?php echo $sec; ?>/<?php echo $viendo['idSerie'] ?>/T<?php echo $viendo['temporada']; ?>/cover.jpg" title="<?php echo $viendo['nombre']; ?>" class="resumen-cover" />
 									</a>
 
 								<?php } else { ?>
@@ -73,7 +73,7 @@
 								<?php if ($sec == 'series') { ?>
 																	
 									<a href="series/<?php echo $pendiente['serie']; ?>/temporadas/<?php echo $pendiente['temporada']; ?>">
-										<img src="img/<?php echo $sec; ?>/<?php echo $pendiente['id'] ?>/T<?php echo $pendiente['temporada']; ?>/cover.jpg" title="<?php echo $pendiente['nombre']; ?>" class="resumen-cover" />
+										<img src="img/<?php echo $sec; ?>/<?php echo $pendiente['idSerie'] ?>/T<?php echo $pendiente['temporada']; ?>/cover.jpg" title="<?php echo $pendiente['nombre']; ?>" class="resumen-cover" />
 									</a>
 
 								<?php } else { ?>

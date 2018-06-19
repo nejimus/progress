@@ -12,52 +12,21 @@
 
 						<div class="mainmenu">
 
-							<?php if (isset($sec)) {
+								<a href="anime/resumen">
+									<div class="menu-sec anime <?php echo $an; ?>">Anime</div>
+								</a>
+										
+								<a href="comics/resumen">
+									<div class="menu-sec comic <?php echo $an; ?>">Cómics</div>
+								</a>	
 
-									switch ($sec) {
+								<a href="juegos/resumen">
+									<div class="menu-sec juego <?php echo $an; ?>">Juegos</div>
+								</a>
 
-										case 'anime': $an = 'a'; $co=''; $ju=''; $se='';
-										break;
-										case 'cómics': $an = ''; $co='a'; $ju=''; $se=''; 
-										break;
-										case 'juegos': $an = ''; $co=''; $ju='a'; $se='';
-										break;
-										case 'series': $an = ''; $co=''; $ju=''; $se='a';
-										break;		
-										case 'temporadas': $an = ''; $co=''; $ju=''; $se='a';
-										break;																		
-
-									} ?>
-
-										<a href="anime/resumen">
-											<div class="menu-sec anime <?php echo $an; ?>">Anime</div>
-										</a>
-										<a href="comics/resumen">
-											<div class="menu-sec comic <?php echo $co; ?>">Cómics</div>
-										</a>	
-										<a href="juegos/resumen">
-											<div class="menu-sec juego <?php echo $ju; ?>">Juegos</div>
-										</a>
-										<a href="series/resumen">
-											<div class="menu-sec serie <?php echo $se; ?>">Series</div>									
-										</a>
-
-								<?php } else { ?>
-
-										<a href="anime/resumen">
-											<div class="menu-sec anime">Anime</div>
-										</a>
-										<a href="comics/resumen">
-											<div class="menu-sec comic">Cómics</div>
-										</a>	
-										<a href="juegos/resumen">
-											<div class="menu-sec juego">Juegos</div>
-										</a>
-										<a href="series/resumen">
-											<div class="menu-sec serie">Series</div>									
-										</a>
-
-								<?php } ?>
+								<a href="series/resumen">
+									<div class="menu-sec serie <?php echo $an; ?>">Series</div>							
+								</a>								
 
 						</div>
 
@@ -69,7 +38,7 @@
 
 								<div class="submenu">
 
-									<span>Dashboard de invitado</span>
+									<span class="nick">Perfil de <?php echo $perfil['nick']; ?> #<?php echo $perfil['idUser']; ?></span>
 
 								</div>
 
@@ -80,9 +49,9 @@
 								<div class="submenu">
 
 									<?php if ($sec=='temporadas') { ?>
-										<div class="smenu-sec">Series / <?php echo obtNameElement($_REQUEST['s']); ?> / Temporada <?php echo $_REQUEST['t']; ?></div>
+										<div class="smenu-sec">Series / <?php echo obtNameElement('titulo','series','id',$_REQUEST['s']); ?> / Temporada <?php echo $_REQUEST['t']; ?></div>
 									<?php } else { ?>
-										<div class="smenu-sec"><?php echo $sec; ?> / <?php echo obtNameElement($_REQUEST['id']); ?></div>
+										<div class="smenu-sec"><?php echo $sec; ?> / <?php echo obtNameElement('titulo', $tabla, $campo, $_REQUEST['id']); ?></div>
 									<?php } ?>
 
 								</div>
@@ -109,11 +78,12 @@
 
 						<div class="dropdown user-menu">
 						  <button class="dropdown-toggle header-account" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeIn fadeInLeft fadeInUp fadeInRight">
-						   <img class="profile-icon" src="img/profiles/guest.png" />	
+						   <img class="profile-icon" src="img/profiles/<?php echo $_SESSION['id']; ?>.png" />	
 						  </button>
+
 						  <ul class="dropdown-menu ">
-						    <li><a href="dashboard/invitado">Dashboard</a></li>
-						    <li><a href="#">Cerrar sesión</a></li>
+						    <li><a href="dashboard/<?php echo $_SESSION['id']; ?>">Mi Panel</a></li>
+						    <li><a href="logout">Cerrar sesión</a></li>
 						  </ul>
 						</div>								
 				

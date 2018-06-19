@@ -32,7 +32,7 @@
 
 		case 'juegos':						// RESUMEN JUEGOS
 			$boton = "Añadir juego";
-			$color = "#2F80ED;";
+			$color = "#2D9CDB;";
 			$st1 = "co";			
 			$stat1 = "COMPLETADOS";			
 			$stat2 = "JUGANDO";
@@ -48,15 +48,15 @@
 			$st1 = "co";
 			$stat1 = "COMPLETADAS";				
 			$stat2 = "SIGUIENDO";
-			$ultimos = getElementosPorEstado('usuarios_series,temporadas, series','cod_ser','idTempo AND serie = id','Completada','fecha DESC');
-			$viendos = getElementosPorEstado('usuarios_series,temporadas, series','cod_ser','idTempo AND serie = id','Viendo','nombre');
-			$pendientes = getElementosPorEstado('usuarios_series,temporadas, series','cod_ser','idTempo AND serie = id','Pendiente','nombre');
+			$ultimos = getElementosPorEstado('usuarios_series,temporadas, series','cod_ser','idTempo AND serie = idSerie','Completada','fecha DESC');
+			$viendos = getElementosPorEstado('usuarios_series,temporadas, series','cod_ser','idTempo AND serie = idSerie','Viendo','nombre');
+			$pendientes = getElementosPorEstado('usuarios_series,temporadas, series','cod_ser','idTempo AND serie = idSerie','Pendiente','nombre');
 			break;
 	}
 	
-	require 'vistas/cabecera.php';
 	
 	//Pasa a la vista toda la información que se desea representar
+	require 'cabecera.controlador.php';
 	require 'vistas/resumen.php';
 
 ?>
