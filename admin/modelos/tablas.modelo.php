@@ -1,6 +1,6 @@
 <?php
 
-	function getDatos($tabla, $page = 1, $qti = 15)
+	function getDatos($t, $page = 1, $qti = 12)
 	{		
 	  // Conectar con la base de datos y seleccionarla
 	  $conexion = mysqli_connect('localhost', 'root', 'suerte.0','progress');
@@ -9,7 +9,7 @@
 	  $qti = $qti * ($page - 1);
 	  
 	  // Ejecutar la consulta SQL
-	  $resultado = mysqli_query($conexion, "SELECT * FROM $tabla ORDER BY 1 LIMIT 15 OFFSET $qti ");
+	  $resultado = mysqli_query($conexion, "SELECT * FROM $t ORDER BY 1 LIMIT 12 OFFSET $qti ");
 	  
 	  // Crear el array de elementos para la capa de la vista
 	  $ultimos = array();

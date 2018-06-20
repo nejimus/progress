@@ -14,7 +14,7 @@
 		
 		$sha1_pass = sha1($password);
 		
-		$sql = "SELECT idUser, nick FROM usuarios WHERE email = '$email' AND password = '$sha1_pass' ";
+		$sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$sha1_pass' ";
 		$result=$mysqli->query($sql);
 		$rows = $result->num_rows;
 		
@@ -22,6 +22,7 @@
 			$row = $result->fetch_assoc();
 			$_SESSION['id'] = $row['idUser'];
 			$_SESSION['nick'] = $row['nick'];
+			$_SESSION['role'] = $row['role'];
 			
 			header("Location: dashboard/".$_SESSION['id']."");
 			} else {
@@ -48,6 +49,7 @@
 			$row = $result->fetch_assoc();
 			$_SESSION['id'] = $row['idUser'];
 			$_SESSION['nick'] = $row['nick'];
+			$_SESSION['role'] = $row['role'];
 			
 			header("Location: dashboard/".$_SESSION['id']."");
 			}

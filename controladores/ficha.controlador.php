@@ -29,8 +29,12 @@
 			$ficha_t4 = "Temporada:";					// 4o TAG de la ficha técnica
 
 			$generos = obtenerGeneroElemento('animes_genero','anime',$id);			// Obtenemos los géneros del anime
-			
-			$ficha_t2_value = $ficha['episodios'];		// Valor para el 2o TAG de la ficha técnica
+	
+			if ($ficha['episodios'] == 0) {
+				$ficha_t2_value = "Desconocido";
+			} else {
+				$ficha_t2_value = $ficha['episodios'];		// Valor para el 2o TAG de la ficha técnica	
+			}		
 			$ficha_t3_value = $ficha['fuente'];			// Valor para el 3er TAG de la ficha técnica
 			$ficha_t4_value = $ficha['temporada'];		// Valor para el 4o TAG de la ficha técnica
 
@@ -67,13 +71,24 @@
 
 			IF ($estado['estado'] == 'Completado') {
 				$est = "Terminado el ".transformarData($estado['fecha']);
-				$minota = $estado['puntuacion'];
+
+				if ($estado['puntuacion'] != 0.00) {
+					$minota = $estado['puntuacion'];
+				} else {
+					$minota = " ------- ";
+				}
 
 				if ($estado['empezado'] !== '0000-00-00') {
 					$empe = "Lo empezaste el ".transformarData($estado['empezado']);
 				} else {
 					$empe = "No lo has determinado";
-				}				
+				}	
+
+				if ($estado['fecha'] !== '0000-00-00') {
+					$est = "Completado el ".transformarData($estado['fecha']);
+				} else {
+					$est = "Completado (sin fecha)";
+				}							
 			}
 
 			IF ($estado['estado'] == 'Viendo') {

@@ -23,8 +23,9 @@
 								?>			                
 				                  <th>#</th>
 				                  <th>Título</th>
-				                  <th>Género</th>
+				                  <th>Episodios</th>
 				                  <th>Fuente</th>
+				                  <th>Temporada</th>
 				                </tr>
 				              </thead>
 				              <tbody>
@@ -32,8 +33,9 @@
 					                <tr>
 					                  <td><?php echo $dato[0]; ?></td>
 					                  <td><?php echo $dato[1]; ?></td>
-					                  <td><?php echo getNombreGenero($dato[5]); ?>, <?php echo getNombreGenero($dato[6]); ?></td>
-					                  <td><?php echo $dato[7]; ?></td>
+					                  <td><?php echo $dato[4]; ?></td>
+					                  <td><?php echo $dato[5]; ?></td>
+					                  <td><?php echo $dato[6]; ?></td>
 					                  <td>
 					                  	<button type="button" class="btn btn-sm btn-warning">Editar</button>
 					                  	<button type="button" class="btn btn-sm btn-danger">Borrar</button>
@@ -47,8 +49,8 @@
 				                  <th>#</th>
 				                  <th>Título</th>
 				                  <th>Subtitulo</th>
-				                  <th>Lanzamiento</th>
-				                  <th>Precio</th>
+				                  <th>Linea</th>
+				                  <th>Autores</th>
 				                </tr>
 				              </thead>
 				              <tbody>

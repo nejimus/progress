@@ -10,7 +10,7 @@
 							<span class="ficha-subtitle"><?php echo $subtitulo; ?></span>
 							<span class="ficha-linea"><?php echo $linea; ?></span>
 							
-						<a data-fancybox="gallery" href="img/<?php echo $ruta; ?>/cover.jpg">
+						<a data-fancybox="gallery" class="ficha-img" href="img/<?php echo $ruta; ?>/cover.jpg">
 							<img class="ficha-cover" src="img/<?php echo $ruta; ?>/cover.jpg" title="<?php echo $titulo; ?>" />
 						</a>
 

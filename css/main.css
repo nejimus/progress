@@ -2335,12 +2335,16 @@ h3.ribbon:before {
 	border-radius: 3px;	
 }
 
+.ficha-img {
+	position: absolute;
+    top: 15px;
+    left: 20px
+}
+
 .ficha-cover {
 	position: relative;
 	width: 120px;
 	height: 160px;
-	top: 15px;
-	left: 20px;
 
 	border-radius: 3px;	
 }
