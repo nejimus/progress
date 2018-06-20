@@ -10,9 +10,13 @@
 	  $perfil = mysqli_fetch_array($resultado);
 	 
 	  mysqli_close($conexion);
-	 
-	  return $perfil;
 
+	  if ($perfil != NULL) {
+	  	return $perfil;
+	  } else {
+	  	header("Location: ../error");
+	  }
+	 
 	}
 
 	function getUltimoCompleto($id) {

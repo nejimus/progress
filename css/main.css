@@ -3087,6 +3087,52 @@ h3.ribbon:before {
 }
 
 /*************************************************************************/
+/*  ERROR 404
+*************************************************************************/
+
+.error-rec {
+	position: relative;
+    width: 980px;
+    height: 600px;
+    top: 35px;
+    left: 60px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;	
+}
+
+.error-rec h1 {
+	position: relative;
+	top: 220px;
+
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 32px;
+
+	color: #2D9CDB;
+
+	text-transform: uppercase;
+}
+
+.error-rec h3 {
+	position: relative;
+	top: 220px;
+
+	font-family: Raleway;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 22px;
+
+	text-transform: uppercase;
+}
+
+/*************************************************************************/
 /*  PIE
 *************************************************************************/
 

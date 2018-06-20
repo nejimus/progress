@@ -4,6 +4,7 @@ RewriteBase /progress/
 RewriteRule ^/ index.php
 RewriteRule ^dashboard/(.+) index.php?accion=dashboard&id=$1
 RewriteRule ^logout index.php?accion=logout
+RewriteRule ^error index.php?accion=error
 RewriteRule ^anime/resumen index.php?sec=anime&accion=resumen
 RewriteRule ^comics/resumen index.php?sec=cómics&accion=resumen
 RewriteRule ^juegos/resumen index.php?sec=juegos&accion=resumen

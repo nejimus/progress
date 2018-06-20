@@ -22,6 +22,10 @@
 	{	
 		
 		switch ($accion) {
+
+			case 'error':
+			include $carpetaControladores.'error.controlador.php';
+			break;
 		
 			case 'login':	
 			include $carpetaControladores.'login.controlador.php';

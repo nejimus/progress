@@ -10,8 +10,13 @@
 	  $ficha = mysqli_fetch_array($resultado);
 	 
 	  mysqli_close($conexion);
-	 
-	  return $ficha;
+
+	  if ($ficha != NULL) {
+	  	return $ficha;
+	  } else {
+	  	header("Location: ../error");
+	  }
+	  
 	}
 
 	function getEstadoElemento($t,$c,$i)
