@@ -15,10 +15,11 @@
 							<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
 								<input type="text" name="email" placeholder="ejemplo@mail.com" >
 								<input type="password" name="password" placeholder="Contraseña" >
-								<input type="submit" value="Acceder">
+								<input type="submit" name="login" value="Acceder">
 							</form>
 
-							<div style = "font-size:16px; color:#cc0000;"><?php echo isset($error) ? utf8_decode($error) : '' ; ?></div>		
+							<?php 
+								if(isset($errMsg)){	echo '<div style="color:#FF0000;text-align:center;font-size:17px;">'.$errMsg.'</div>'; } ?>	
 
 						</div>
 

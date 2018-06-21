@@ -23,7 +23,7 @@
 	{		
 	  $conexion = conectarBD();
 
-	  $uid = $_SESSION['id'];
+	  $uid = $_SESSION['idUser'];
 	 
 	  $status = mysqli_query($conexion,"SELECT * FROM $t WHERE $c = $i AND cod_usu = $uid ");
 	 

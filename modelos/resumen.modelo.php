@@ -3,7 +3,7 @@
 	function getElementosPorEstado($t1,$c1,$c2,$st,$or)
 	{		
 
-	  $uid = $_SESSION['id'];
+	  $uid = $_SESSION['idUser'];
 
 	  // Conectar con la base de datos y seleccionarla
 	  $conexion = conectarBD();

@@ -2,8 +2,8 @@
 
 	session_start();
 
-	if(isset($_SESSION["id"])){
-		if ($_SESSION["id"] == 1) {
+	if(isset($_SESSION["idUser"])){
+		if ($_SESSION["role"] == 'admin') {
 
 		} else {
 			header("Location: ../index.php");	

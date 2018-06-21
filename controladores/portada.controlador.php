@@ -1,5 +1,9 @@
 <?php
 
+	if(isset($_SESSION["idUser"])){
+		header("Location: dashboard/".$_SESSION['idUser']."");
+	}
+
 	//Incluye el modelo que corresponde
 	require 'modelos/portada.modelo.php';
  

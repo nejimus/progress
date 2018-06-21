@@ -4,7 +4,6 @@
 	require 'modelos/ficha.modelo.php';
 
 		$id = $_REQUEST['id'];							// Obtenemos el ID
-		$sec = $_REQUEST['sec'];						// Obtenemos la sección
 
 	SWITCH ($sec) {
 		case 'anime':

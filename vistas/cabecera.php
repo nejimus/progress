@@ -78,14 +78,14 @@
 
 						<div class="dropdown user-menu">
 						  <button class="dropdown-toggle header-account" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeIn fadeInLeft fadeInUp fadeInRight">
-						   <img class="profile-icon" src="img/profiles/<?php echo $_SESSION['id']; ?>.png" />	
+						   <img class="profile-icon" src="img/profiles/<?php echo $_SESSION['idUser']; ?>.png" />	
 						  </button>
 
 						  <ul class="dropdown-menu ">
 						  	<?php if ($_SESSION['role'] == 'admin') { ?>
 						  	  	<li><a href="admin">Admin.</a></li>
 						  	<?php } ?>
-						    <li><a href="dashboard/<?php echo $_SESSION['id']; ?>">Mi Panel</a></li>
+						    <li><a href="dashboard/<?php echo $_SESSION['idUser']; ?>">Mi Panel</a></li>
 						    <li><a href="logout">Cerrar sesión</a></li>
 						  </ul>
 						</div>								
