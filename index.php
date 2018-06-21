@@ -10,6 +10,7 @@
 		$sec = $_REQUEST['sec'];
 	}	
 	
+	require 'clases/conexion.class.php';
 	require 'clases/funciones.class.php';
 	
 	// La carpeta donde se encuentran los controladores

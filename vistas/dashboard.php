@@ -84,9 +84,9 @@
 
 					<div class="last-complete">
 						<h3>Último completado</h3>
-						<?php if ($ultimo[0] != null) { ?>
-							<a href="juegos/<?php echo $ultimo[0]; ?>">
-								<img src="img/juegos/<?php echo $ultimo[0]; ?>/banner.jpg" />
+						<?php if ($ultimo['cod_jue'] != null) { ?>
+							<a href="juegos/<?php echo $ultimo['cod_jue']; ?>">
+								<img src="img/juegos/<?php echo $ultimo['cod_jue']; ?>/banner.jpg" />
 							</a>
 						<?php } else { ?>
 							<img src="img/juegos/0/banner.jpg" />

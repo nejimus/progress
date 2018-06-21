@@ -1,91 +1,63 @@
 <?php
 
-	function getPerfilUsuario($id) {
+	class userinfo{
 
-	  $conexion = conectarBD();
-	  mysqli_query($conexion,"SET NAMES 'utf8'");
+	    function __construct($db)
+	    {
+	        $this->db = $db;
+	    }
 
-	  $resultado = mysqli_query($conexion,"SELECT * FROM usuarios WHERE idUser = $id ");
-	 
-	  $perfil = mysqli_fetch_array($resultado);
-	 
-	  mysqli_close($conexion);
+	    function getPerfil($id)
+	    {
+	        $sql = 'SELECT idUser, nick, descrip, twitter FROM usuarios WHERE idUser = :id';
+        	$stm = $this->db->prepare($sql);
+        	$stm->execute(array(':id' => $id));
+        
+			  if ($stm == NULL) {
+			  	header("Location: ../error");
+			  } else {
+			  	return $data = $stm->fetch(PDO::FETCH_ASSOC);
+			  }
+	    }
 
-	  if ($perfil != NULL) {
-	  	return $perfil;
-	  } else {
-	  	header("Location: ../error");
-	  }
-	 
-	}
+	    function getUltimoCompletado($id)
+	    {
+	        $sql = 'SELECT cod_jue FROM usuarios_juegos WHERE cod_usu = :id AND estado = "Completado" ORDER BY hora DESC';
+        	$stm = $this->db->prepare($sql);
+        	$stm->execute(array(':id' => $id));
+        
+			return $data = $stm->fetch(PDO::FETCH_ASSOC);
+	    }
 
-	function getUltimoCompleto($id) {
+	    function getTitulosSiguiendo($id) {
 
-	  $conexion = conectarBD();
-	  mysqli_query($conexion,"SET NAMES 'utf8'");
+	        $sql = 'SELECT COUNT(*) FROM usuarios_juegos WHERE cod_usu = :id';
+        	$stm = $this->db->prepare($sql);
+        	$stm->execute(array(':id' => $id));
+        
+			return $data = $stm->fetch(PDO::FETCH_BOTH);	    	
 
-	  $resultado = mysqli_query($conexion,"SELECT cod_jue FROM usuarios_juegos WHERE cod_usu = $id AND estado = 'Completado' ORDER BY hora DESC ");
-	 
-	  $ultimo = mysqli_fetch_array($resultado);
-	 
-	  mysqli_close($conexion);
-	 
-	  return $ultimo;
+	    }
 
-	}
+	    function getTitulosByEstado($id,$e) {
 
-	function getTitulosSiguiendo($id) {
+	        $sql = 'SELECT COUNT(*) FROM usuarios_juegos WHERE cod_usu = :id AND estado = :e';
+        	$stm = $this->db->prepare($sql);
+        	$stm->execute(array(':id' => $id,':e' => $e));
+        
+			return $data = $stm->fetch(PDO::FETCH_BOTH);	    	
 
-	  $conexion = conectarBD();
-	  mysqli_query($conexion,"SET NAMES 'utf8'");
+	    }
 
-	  $resultado = mysqli_query($conexion,"SELECT COUNT(*) FROM usuarios_juegos WHERE cod_usu = $id ");
-	 
-	  $siguiendo = mysqli_fetch_array($resultado);
-	 
-	  mysqli_close($conexion);
-	 
-	  return $siguiendo;
+	    function getEventosUsuario($id) {
 
-	}
-
-	function getTitulosByEstado($id,$e) {
-
-	  $conexion = conectarBD();
-	  mysqli_query($conexion,"SET NAMES 'utf8'");
-
-	  $resultado = mysqli_query($conexion,"SELECT COUNT(*) FROM usuarios_juegos WHERE cod_usu = $id AND estado = '$e' ");
-	 
-	  $porestado = mysqli_fetch_array($resultado);
-	 
-	  mysqli_close($conexion);
-	 
-	  return $porestado;
+	        $sql = 'SELECT * FROM usuarios_juegos WHERE cod_usu = :id ORDER BY hora DESC LIMIT 4';
+        	$stm = $this->db->prepare($sql);
+        	$stm->execute(array(':id' => $id));
+        
+			return $data = $stm->fetchAll();	    	
+	    }
 
 	}
-
-	function getEventosUsuario($id)
-	{		
-	  // Conectar con la base de datos y seleccionarla
-	  $conexion = conectarBD();
-	  mysqli_query($conexion,"SET NAMES 'utf8'");
-	 
-	  // Ejecutar la consulta SQL
-	  $resultado = mysqli_query($conexion,"SELECT * FROM usuarios_juegos WHERE cod_usu = $id ORDER BY hora DESC LIMIT 4");
-	 
-	  // Crear el array de elementos para la capa de la vista
-	  $eventos = array();
-	  
-	  while ($fila = mysqli_fetch_array($resultado))
-	  {
-		$eventos[] = $fila;	
-	  }
-	 
-	  // Cerrar la conexión
-	  mysqli_close($conexion);
-	 
-	  return $eventos;
-	}
-
 
 ?>
