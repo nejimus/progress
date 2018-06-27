@@ -1,7 +1,5 @@
 <?php
 
-	require 'clases/conexion.class.php';
-
 	if(isset($_POST['login'])) {
 
 		$errMsg = '';
