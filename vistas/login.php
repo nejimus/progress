@@ -1,3 +1,7 @@
+<?php
+    include "metas.php";
+?>
+
 		<div id="contentWrapp">
 			
 			<div id="content">

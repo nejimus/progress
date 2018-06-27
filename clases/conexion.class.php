@@ -1,9 +1,9 @@
 <?php
 
 	// Define database
-	define('dbhost', 'localhost');
+	define('dbhost', 'db');
 	define('dbuser', 'root');
-	define('dbpass', 'suerte.0');
+	define('dbpass', 'root');
 	define('dbname', 'progress');
 
 	// Connecting database
@@ -13,6 +13,7 @@
 	}
 
 	catch(PDOException $e) {
+	    throw new PDOException($e->getMessage());
 		echo $e->getMessage();
 	}
 

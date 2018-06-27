@@ -16,7 +16,7 @@
 	// La carpeta donde se encuentran los controladores
 	$carpetaControladores = "controladores/";
 
-	include 'vistas/metas.php';
+
 	// include 'vistas/cabecera.php';
 
 	if(!empty($_REQUEST['accion']))

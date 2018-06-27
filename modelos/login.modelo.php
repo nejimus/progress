@@ -1,4 +1,7 @@
 <?php
+    if (isset($_GET['guest'])) {
+        loginGuest();
+    }
 
 	if(isset($_POST['login'])) {
 
@@ -55,12 +58,11 @@
 	function loginGuest()
 	{
 
-		require 'clases/conexion.class.php';
+		require $_SERVER['DOCUMENT_ROOT'] . '/clases/conexion.class.php';
 
 		$email = 'guest@progress.com';
 		$password = sha1('invitado');
-		$errMsg = '';
-	
+
 		$stmt = $connect->prepare('SELECT idUser, email, password, nick, descrip, twitter, role FROM usuarios WHERE email = :email');
 		$stmt->execute(array(
 			':email' => $email
@@ -84,8 +86,6 @@
 
 	}
 
-	if (isset($_GET['guest'])) {
-	    loginGuest();
-	}	
+
 
 ?>

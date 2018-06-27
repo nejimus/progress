@@ -1,7 +1,7 @@
 <?php
 
 		function conectarBD() {
-			$conexion = mysqli_connect('localhost', 'root', 'suerte.0','progress');
+			$conexion = mysqli_connect('db', 'root', 'root','progress');
 			return $conexion;
 		}
 

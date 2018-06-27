@@ -3,7 +3,7 @@
 	function getTotalAnimes()
 	{		
 	  // Conectar con la base de datos y seleccionarla
-	  $conexion = mysqli_connect('localhost', 'root', 'suerte.0','progress');
+	  $conexion = mysqli_connect('db', 'root', 'root','progress');
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
 	  // Ejecutar la consulta SQL
@@ -20,7 +20,7 @@
 	function getTotalComics()
 	{		
 	  // Conectar con la base de datos y seleccionarla
-	  $conexion = mysqli_connect('localhost', 'root', 'suerte.0','progress');
+	  $conexion = mysqli_connect('db', 'root', 'root','progress');
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
 	  // Ejecutar la consulta SQL
@@ -37,7 +37,7 @@
 	function getTotalJuegos()
 	{		
 	  // Conectar con la base de datos y seleccionarla
-	  $conexion = mysqli_connect('localhost', 'root', 'suerte.0','progress');
+	  $conexion = mysqli_connect('db', 'root', 'root','progress');
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
 	  // Ejecutar la consulta SQL
@@ -54,7 +54,7 @@
 	function getTotalSeries()
 	{		
 	  // Conectar con la base de datos y seleccionarla
-	  $conexion = mysqli_connect('localhost', 'root', 'suerte.0','progress');
+	  $conexion = mysqli_connect('db', 'root', 'root','progress');
 	  mysqli_query($conexion,"SET NAMES 'utf8'");
 	 
 	  // Ejecutar la consulta SQL

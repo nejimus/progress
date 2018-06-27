@@ -1,6 +1,5 @@
 Options +FollowSymLinks
 RewriteEngine on
-RewriteBase /progress/
 RewriteRule ^/ index.php
 RewriteRule ^dashboard/(.+) index.php?accion=dashboard&id=$1
 RewriteRule ^logout index.php?accion=logout
