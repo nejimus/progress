@@ -1,4 +1,6 @@
-		<div id="contentWrapp">
+
+
+        <div id="contentWrapp">
 			
 			<div id="content">
 
@@ -6,7 +8,7 @@
 
 					<div class="profile-rec">
 
-						<img src="img/profiles/<?php echo $perfil['idUser']; ?>.png" />
+						<img src="/img/profiles/<?php echo $perfil['idUser']; ?>.png" />
 						<h3><?php echo $perfil['nick']; ?></h3>
 						<h4>#<?php echo $perfil['idUser']; ?></h4>
 
@@ -61,7 +63,7 @@
 								<span>ha completado 
 									<a class="f-elem" href="juegos/<?php echo $evento['cod_jue']; ?>"><?php echo obtNameElement('titulo', 'juegos', 'idJuego', $evento['cod_jue']); ?></a>
 								</span>
-								<a href=""><img src="img/icons/share-alt.svg" /></a>
+								<a href=""><img src="/img/icons/share-alt.svg" /></a>
 						<?php	break;
 								case 'Jugando':
 						?>		
@@ -69,7 +71,7 @@
 								<span>ha empezado a jugar a 
 									<a class="f-elem" href="juegos/<?php echo $evento['cod_jue']; ?>"><?php echo obtNameElement('titulo', 'juegos', 'idJuego', $evento['cod_jue']); ?></a>
 								</span>
-								<a href=""><img src="img/icons/share-alt.svg" /></a>
+								<a href=""><img src="/img/icons/share-alt.svg" /></a>
 						<?php	break;
 								case 'Pendiente':
 						?>
@@ -77,7 +79,7 @@
 								<span>está siguiendo 
 									<a class="f-elem" href="juegos/<?php echo $evento['cod_jue']; ?>"><?php echo obtNameElement('titulo', 'juegos', 'idJuego', $evento['cod_jue']); ?></a>
 								</span>
-								<a href=""><img src="img/icons/share-alt.svg" /></a>
+								<a href=""><img src="/img/icons/share-alt.svg" /></a>
 						<?php   break; } ?>							
 						</div>
 					<?php endforeach; ?>													
@@ -86,10 +88,10 @@
 						<h3>Último completado</h3>
 						<?php if ($ultimo['cod_jue'] != null) { ?>
 							<a href="juegos/<?php echo $ultimo['cod_jue']; ?>">
-								<img src="img/juegos/<?php echo $ultimo['cod_jue']; ?>/banner.jpg" />
+								<img src="/img/juegos/<?php echo $ultimo['cod_jue']; ?>/banner.jpg" />
 							</a>
 						<?php } else { ?>
-							<img src="img/juegos/0/banner.jpg" />
+							<img src="/img/juegos/0/banner.jpg" />
 						<?php } ?>
 						<div class="lasttitle"><?php echo $lasttitle; ?></div>
 					</div>

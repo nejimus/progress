@@ -11,7 +11,7 @@
 							<span class="ficha-linea"><?php echo $linea; ?></span>
 							
 						<a data-fancybox="gallery" class="ficha-img" href="img/<?php echo $ruta; ?>/cover.jpg">
-							<img class="ficha-cover" src="img/<?php echo $ruta; ?>/cover.jpg" title="<?php echo $titulo; ?>" />
+							<img class="ficha-cover" src="/img/<?php echo $ruta; ?>/cover.jpg" title="<?php echo $titulo; ?>" />
 						</a>
 
 						<span class="<?php echo $sinopsis_tag ?>"><?php echo $descripcion; ?></span>

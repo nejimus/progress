@@ -1,4 +1,7 @@
-	<div id="myRank">
+<?php
+    include "metas.php";
+?>
+<div id="myRank">
 	
 	  <div id="wrapp">
 
@@ -78,7 +81,7 @@
 
 						<div class="dropdown user-menu">
 						  <button class="dropdown-toggle header-account" data-toggle="dropdown" data-hover="dropdown" data-animations="fadeIn fadeInLeft fadeInUp fadeInRight">
-						   <img class="profile-icon" src="img/profiles/<?php echo $_SESSION['idUser']; ?>.png" />	
+						   <img class="profile-icon" src="/img/profiles/<?php echo $_SESSION['idUser']; ?>.png" />
 						  </button>
 
 						  <ul class="dropdown-menu ">
